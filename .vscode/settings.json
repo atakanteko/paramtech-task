@@ -1,0 +1,35 @@
+{
+
+    "liveSassCompile.settings.generateMap": true,
+
+    "liveSassCompile.settings.formats": [
+
+        {
+
+            "format": "expanded",
+
+            "extensionName": ".css",
+
+            "savePath": "src/assets/styles/css"
+
+        },
+
+        {
+
+            "format": "compressed",
+
+            "extensionName": ".min.css",
+
+            "savePath": "src/assets/styles/css"
+
+        }
+
+    ],
+
+    "liveSassCompile.settings.includeItems": [
+
+        "src/assets/styles/scss/paramtech.scss"
+
+    ]
+
+}

@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*, *:before, *:after {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+*, *:hover, *:focus, *:active {
+  outline: none !important;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  height: -webkit-fill-available;
+}
+
+input, textarea {
+  -webkit-user-select: text !important;
+     -moz-user-select: text !important;
+      -ms-user-select: text !important;
+          user-select: text !important;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none !important;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+input:hover,
+input:focus,
+input:active,
+button,
+button:hover,
+button:focus,
+button:active,
+textarea,
+textarea:hover,
+textarea:focus,
+textarea:active,
+select,
+select:hover,
+select:focus,
+select:active {
+  outline: none !important;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.auth-layout {
+  height: 100vh;
+  background-color: #E5E5E5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-layout .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=paramtech.css.map */
