@@ -1,0 +1,109 @@
+.package-list{
+    background: #FFFFFF;
+    box-shadow: 0px toRem(5) toRem(20) toRem(20) rgba(0, 0, 0, 0.03);
+    border-radius: toRem(12);
+    padding: toRem(52) toRem(34) toRem(22) toRem(34);
+    .card-container{
+        border-radius: toRem(8);
+        background-color: getColor('mini-card-bg');
+        display: flex;
+        overflow: hidden;
+        &.selected-card{
+            border: toRem(2) solid getColor('selected-box-color');
+        }
+        figure{
+            img{
+                max-width: 192px;
+                max-height: 139px;
+                object-fit: cover;
+            }
+        }
+        .card-info{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: toRem(20) toRem(18) toRem(7) toRem(25);
+            .card-divider{
+                margin: 0 0 toRem(6) 0;
+            }
+            .card-title, .card-detail, .card-tag{
+                display: flex;
+                align-items: center;
+                width: 100%;
+            }
+            .card-title{
+                margin-bottom: toRem(14);
+                justify-content: space-between;
+                h3{
+                    @include fontStyleGenerator(700, 20, 22) 
+                }
+            }
+            .card-detail{
+                margin-bottom: toRem(28);
+                h5{
+                    @include fontStyleGenerator(400, 12, 22);
+                    &:not(:last-child){
+                        margin-right: toRem(28);
+                    }
+                }
+            }
+            .card-tag{
+                h5{
+                    padding: toRem(4) toRem(14) toRem(4) toRem(14);
+                    background: #C4C4C4;
+                    border-radius: toRem(8);
+                    @include fontStyleGenerator(400, 12, 12);
+                    &:not(:last-child){
+                        margin-right: toRem(8);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width:map-get($gridBreakpoints, lg)){
+        padding: toRem(20) toRem(10) toRem(20) toRem(10);
+        .card-container{
+            height: auto;
+            flex-direction: column;            
+            overflow: hidden;
+            figure{
+                display: none;
+                img{
+                    width: 100%;
+                    max-height: 139px;
+                }
+            }
+            .card-info{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: toRem(20) toRem(18) toRem(7) toRem(25);
+                .card-divider{
+                    margin: 0 0 toRem(6) 0 !important;
+                }
+                .card-title, .card-detail, .card-tag{
+                    display: flex;
+                    align-items: center;
+                }
+                .card-title{
+                    margin-bottom: toRem(8);
+                }
+                .card-detail{
+                    margin-bottom: toRem(14);
+                    &:not(:last-child){
+                        margin-right: toRem(18);
+                    }
+                }
+                .card-tag{
+                    &:not(:last-child){
+                        margin-right: toRem(2);
+                    }
+                }
+            }
+        }
+    }
+}

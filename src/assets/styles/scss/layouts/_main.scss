@@ -19,14 +19,24 @@
             }
         }
     }
+    
+    .pt-content{
+        min-height:  calc(100vh - toRem(85));
+        padding: toRem(82) toRem(160) toRem(121) toRem(160);
+    }
 
     @media screen and (max-width:map-get($gridBreakpoints, lg)){
         .pt-header{
             padding: 0 toRem(20) 0 toRem(20);
-            height: auto;
+            height: toRem(110);
             flex-direction: column;
             align-items: center;
             justify-content: center;            
+        }
+        .pt-content{
+            min-height:  calc(100vh - toRem(110));
+            padding: toRem(12) toRem(30) toRem(12) toRem(30);
+
         }
     }
 }
