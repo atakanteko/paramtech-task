@@ -15,7 +15,6 @@ const initialState = {
 export const loginUser = createAsyncThunk(
     'user/loginUser',
     async (user, thunkAPI) => {
-        console.log(user)
         try {
             const resp = await signup(user)
             if (resp.status === 201) {

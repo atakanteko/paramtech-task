@@ -4,6 +4,7 @@
     border-radius: toRem(12);
     padding: toRem(52) toRem(34) toRem(22) toRem(34);
     .card-container{
+        cursor: pointer;
         border-radius: toRem(8);
         background-color: getColor('mini-card-bg');
         display: flex;
