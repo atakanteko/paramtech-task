@@ -359,6 +359,32 @@ body {
   font-size: 1rem;
   line-height: 1.375rem;
 }
+.payment .payment-card .payment-card-title {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  margin-bottom: 0.8125rem;
+}
+.payment .payment-card .payment-card-container {
+  padding: 1.375rem 1.125rem;
+  border: 0.0625rem solid #E1E1E1;
+  border-radius: 0.5rem;
+}
+.payment .payment-card .payment-card-container:not(:last-child) {
+  margin-bottom: 2.9375rem;
+}
+.payment .payment-card .payment-card-container p {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  margin-bottom: 1.25rem;
+}
+.payment .payment-card .payment-card-container.agreement {
+  overflow: scroll;
+}
+.payment .payment-card .payment-card-container.credentials {
+  overflow: scroll;
+}
 @media screen and (max-width: 992px) {
   .payment {
     flex-flow: column-reverse;

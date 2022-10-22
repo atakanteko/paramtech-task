@@ -1,5 +1,6 @@
-import {Col, Row, Skeleton} from "antd";
+import {Row} from "antd";
 import CompletePayment from "./CompletePayment";
+import DebitCard from "./DebitCard";
 
 function PaymentContainer({packageItems}){
     return(
@@ -10,11 +11,7 @@ function PaymentContainer({packageItems}){
             ]}
              className="payment"
         >
-            <Col xs={24} lg={18}>
-                <div className="payment-card">
-                    sdf
-                </div>
-            </Col>
+            <DebitCard />
             <CompletePayment packageItems={packageItems}/>
         </Row>
     )
