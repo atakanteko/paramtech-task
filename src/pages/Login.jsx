@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import {useNavigate} from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import LoginForm from "../components/pages/LoginForm";
 
 function Login() {
