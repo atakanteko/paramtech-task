@@ -332,4 +332,35 @@ body {
   .package-list .card-container .card-info .card-tag:not(:last-child) {
     margin-right: 0.125rem;
   }
+}
+
+.payment .payment-card {
+  padding: 1.6875rem 1.9375rem;
+  background: #FFFFFF;
+  border-radius: 0.75rem;
+}
+.payment .payment-card .payment-completed h4 {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  margin-bottom: 1.25rem;
+}
+.payment .payment-card .payment-completed .product-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F2F2F2;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.625rem;
+}
+.payment .payment-card .payment-completed .product-info h5 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+@media screen and (max-width: 992px) {
+  .payment {
+    flex-flow: column-reverse;
+  }
 }/*# sourceMappingURL=paramtech.css.map */

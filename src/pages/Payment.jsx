@@ -1,23 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import {useNavigate} from "react-router-dom";
+import PaymentContainer from "../components/sections/payment/PaymentContainer";
 
 function Payment(){
+    const navigate = useNavigate();
     const { selectedPackages, packages } = useSelector((store) => store.package)
-    let total = 0
+    const [packageItems, setPackageItems] = useState([])
+
     useEffect(() => {
-        packages.forEach((item) => {
-            selectedPackages.forEach((x) => {
-                if (item.id === x){
-                    console.log(item)
-                }
+        if (selectedPackages.length === 0){
+            navigate('/package-list')
+        }else{
+            packages.forEach((item) => {
+                selectedPackages.forEach((x) => {
+                    if (item.id === x){
+                        setPackageItems(arr => [...arr, item])
+                    }
+                })
             })
-        })
+        }
     },[])
 
+
     return(
-        <div className="package-list">
-            Payment
-        </div>
+       <PaymentContainer packageItems={packageItems} />
     )
 }
 

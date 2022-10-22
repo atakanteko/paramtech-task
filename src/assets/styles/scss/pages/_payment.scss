@@ -1,0 +1,29 @@
+.payment{
+    .payment-card{
+        padding: toRem(27) toRem(31);
+        background: #FFFFFF;
+        border-radius: toRem(12);
+        .payment-completed{
+            h4{
+               @include fontStyleGenerator(500, 16, 22); 
+               margin-bottom: toRem(20);
+            }
+            .product-info{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: getColor('mini-card-bg');
+                padding: toRem(10) toRem(12);
+                border-radius: toRem(8);
+                margin-bottom: toRem(10);
+                
+                h5{
+                    @include fontStyleGenerator(400, 16, 22);
+                }
+            }
+        }
+    }
+    @media screen and (max-width:map-get($gridBreakpoints, lg)){
+        flex-flow: column-reverse;
+    }
+}
