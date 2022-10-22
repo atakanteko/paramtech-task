@@ -1,4 +1,4 @@
-import AuthenticationLayout from "../layouts/authentication";
+import AuthenticationLayout from "../layouts/authentication/AuthenticationLayout";
 import Login from "../pages/Login";
 
 const AuthenticationRoutes = {
