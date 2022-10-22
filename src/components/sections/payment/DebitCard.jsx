@@ -1,13 +1,11 @@
 import {Col} from "antd";
+import DebitCardInfo from "./DebitCardInfo";
 
 function DebitCard(){
     return(
         <Col xs={24} lg={18}>
             <div className="payment-card">
-                <h1 className="payment-card-title">Kart Bilgileri</h1>
-                <div className="payment-card-container credentials">
-                    sdfs
-                </div>
+                <DebitCardInfo />
                 <h1 className="payment-card-title">Sözleşme</h1>
                 <div className="payment-card-container agreement">
                     <p>

@@ -15,7 +15,18 @@
             }
             span{
                 display: block;
-                @include fontStyleGenerator(400, 16, 24)
+                @include fontStyleGenerator(400, 16, 24);
+                margin-right: toRem(12);
+            }
+            .logout{
+                background-color:  getColor('btn-bg');
+                border-radius: toRem(8);
+                padding: toRem(6) toRem(12);
+                color: #FFF;
+                cursor: pointer;
+                span{
+                   margin-right: 0;
+                }
             }
         }
     }
