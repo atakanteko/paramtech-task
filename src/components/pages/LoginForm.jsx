@@ -1,20 +1,27 @@
 import { MailOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, Spin } from "antd";
+import {useDispatch, useSelector} from "react-redux";
+import {loginUser} from "../../features/user/userSlice";
 
 function LoginForm() {
+  const { isLoading } = useSelector((store) => store.user)
+  const dispatch = useDispatch()
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    const user ={
+      "fullName": values.username,
+      "email": values.email
+    }
+    dispatch(loginUser(user))
   };
 
   return (
     <Form
       name="normal_login"
       className="login-form"
-      initialValues={{
-        remember: true,
-      }}
       onFinish={onFinish}
     >
+      <label >Adınız Soyadınız</label>
       <Form.Item
         className="login-form-item"
         name="username"
@@ -25,12 +32,12 @@ function LoginForm() {
           },
         ]}
       >
-        <label htmlFor="username">Adınız Soyadınız</label>
         <Input
           className="pt-input"
           prefix={<UserOutlined className="site-form-item-icon" />}
         />
       </Form.Item>
+      <label >Email Adresiniz</label>
       <Form.Item
         className="login-form-item"
         name="email"
@@ -41,7 +48,7 @@ function LoginForm() {
           },
         ]}
       >
-        <label htmlFor="email">Email Adresiniz</label>
+
         <Input
           className="pt-input"
           prefix={<MailOutlined className="site-form-item-icon" />}
@@ -50,8 +57,10 @@ function LoginForm() {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="pt-button">
-          Devam Et
+        <Button type="primary" htmlType="submit" className={`pt-button ${isLoading && 'disable-btn'}`}>
+          {
+            isLoading ? <Spin /> : 'Devam Et'
+          }
         </Button>
       </Form.Item>
     </Form>

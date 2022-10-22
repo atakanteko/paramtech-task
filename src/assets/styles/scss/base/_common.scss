@@ -16,4 +16,10 @@
     width: 100%;
     height: toRem(48);
     @include fontStyleGenerator(400, 14, 22);
+    &.disable-btn{
+        cursor: not-allowed;
+        pointer-events: none;
+        background-color: getColor('disabled-btn-bg');
+        border: none;
+    }
 }

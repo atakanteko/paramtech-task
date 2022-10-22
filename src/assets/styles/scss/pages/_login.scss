@@ -5,13 +5,15 @@
     padding: toRem(64) toRem(52) toRem(38) toRem(52);
     width: auto;
     height: auto;
-    .login-form-item{
-        label{
-            display: block;
-            margin-left: toRem(12);
-        }
-        display: flex;
+    label{
+        display: block;
+        margin-left: toRem(12);
         @include fontStyleGenerator(400, 16, 24);
+
+    }
+    .login-form-item{
+        
+        display: flex;
         &:not(:first-child){
             margin-bottom: toRem(50);
         }
