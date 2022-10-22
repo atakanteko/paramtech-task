@@ -10,10 +10,9 @@ function CardItem({ id, amount, currency, details, imagePath, name, tags }) {
             setApplyStyle(!applyStyle)
         }
     }
-    console.log(applyStyle)
+
     return(
         <Col xs={24} lg={12}>
-
             <div className={`card-container ${applyStyle && 'selected-card'}`}  onClick={()=>{selectPackage(id, amount)}}>
                 <figure>
                     <img src={imagePath} alt={name}/>

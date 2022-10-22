@@ -15,6 +15,10 @@
     border-radius: toRem(8);
     width: 100%;
     height: toRem(48);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @include fontStyleGenerator(400, 14, 22);
     &.disable-btn{
         cursor: not-allowed;

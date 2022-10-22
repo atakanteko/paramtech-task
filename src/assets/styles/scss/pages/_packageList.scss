@@ -3,6 +3,18 @@
     box-shadow: 0px toRem(5) toRem(20) toRem(20) rgba(0, 0, 0, 0.03);
     border-radius: toRem(12);
     padding: toRem(52) toRem(34) toRem(22) toRem(34);
+    display: flex;
+    flex-direction: column;
+    .total-price{
+        h3{
+            @include fontStyleGenerator(400, 20, 22);
+        }
+        display: flex;
+        align-items: center;
+    }
+    .page-divider{
+        margin: toRem(83) 0 toRem(20) 0;
+    }
     .card-container{
         cursor: pointer;
         border-radius: toRem(8);
@@ -65,6 +77,16 @@
     }
     @media screen and (max-width:map-get($gridBreakpoints, lg)){
         padding: toRem(20) toRem(10) toRem(20) toRem(10);
+        flex-flow: column-reverse;
+        .total-price{
+            h3{
+                @include fontStyleGenerator(400, 16, 22);
+                margin-bottom: toRem(10);
+            }
+        }
+        .page-divider{
+            margin: toRem(23) 0 toRem(20) 0;
+        }
         .card-container{
             height: auto;
             flex-direction: column;            
