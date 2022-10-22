@@ -1,7 +1,9 @@
+import LoginForm from "../components/pages/LoginForm";
+
 function Login() {
   return (
-    <section>
-      <h1>Login</h1>
+    <section className="login-card">
+      <LoginForm />
     </section>
   );
 }

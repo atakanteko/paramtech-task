@@ -84,6 +84,30 @@ body {
   font-weight: 700;
 }
 
+.pt-input {
+  width: 27.875rem;
+  height: 3rem;
+  border: 0.0625rem solid #E1E1E1;
+  border-radius: 0.5rem;
+}
+@media screen and (max-width: 992px) {
+  .pt-input {
+    width: 15rem;
+  }
+}
+
+.pt-button {
+  text-align: center;
+  background-color: #1890FF;
+  box-shadow: 0px 0.125rem 0px rgba(0, 0, 0, 0.043);
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 3rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
 .auth-layout {
   height: 100vh;
   background-color: #E5E5E5;
@@ -95,4 +119,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.login-card {
+  background: white;
+  box-shadow: 0px 0.3125rem 1.25rem 1.25rem rgba(0, 0, 0, 0.03);
+  border-radius: 0.75rem;
+  padding: 4rem 3.25rem 2.375rem 3.25rem;
+  width: auto;
+  height: auto;
+}
+.login-card .login-form-item {
+  display: flex;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.login-card .login-form-item label {
+  display: block;
+  margin-left: 0.75rem;
+}
+.login-card .login-form-item:not(:first-child) {
+  margin-bottom: 3.125rem;
+}
+.login-card .login-form-item:first-child {
+  margin-bottom: 3.375rem;
 }/*# sourceMappingURL=paramtech.css.map */
