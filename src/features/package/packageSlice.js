@@ -4,6 +4,7 @@ import {fetchPackages} from "../../client/package";
 const initialState = {
     packages: [],
     isLoading: false,
+    selectedPackages: [],
 };
 
 export const getPackageData = createAsyncThunk(
@@ -24,6 +25,16 @@ const packageSlice = createSlice({
     name: 'package',
     initialState,
     reducers: {
+        pushSelectedPackages: (state, { payload }) =>{
+            if (!state.selectedPackages.some((x) => x === payload.selectedItemId)){
+                state.selectedPackages.push(payload.selectedItemId);
+            } else {
+                const index = state.selectedPackages.indexOf(payload.selectedItemId);
+                if (index > -1) {
+                    state.selectedPackages.splice(index, 1);
+                }
+            }
+        }
 
     },
     extraReducers:{
@@ -41,3 +52,4 @@ const packageSlice = createSlice({
 });
 
 export default packageSlice.reducer;
+export const { pushSelectedPackages } = packageSlice.actions;

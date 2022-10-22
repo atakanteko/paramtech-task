@@ -1,13 +1,17 @@
 import {useState} from "react";
+import {useDispatch} from "react-redux";
 import {Col} from "antd";
 import { Divider } from 'antd';
+import {pushSelectedPackages} from "../../../features/package/packageSlice";
 
 function CardItem({ id, amount, currency, details, imagePath, name, tags }) {
+    const dispatch = useDispatch();
     const [applyStyle, setApplyStyle] = useState(false)
 
-    const selectPackage = (selectedItemId, selectedItemAmount) =>{
+    const selectPackage = (selectedItemId) =>{
         if(id === selectedItemId){
             setApplyStyle(!applyStyle)
+            dispatch(pushSelectedPackages({ selectedItemId }))
         }
     }
 

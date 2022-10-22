@@ -97,6 +97,7 @@ body {
 }
 
 .pt-button {
+  cursor: pointer;
   text-align: center;
   background-color: #1890FF;
   box-shadow: 0px 0.125rem 0px rgba(0, 0, 0, 0.043);

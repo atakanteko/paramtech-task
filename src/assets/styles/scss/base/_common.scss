@@ -9,6 +9,7 @@
 }
 
 .pt-button{
+    cursor: pointer;
     text-align: center;
     background-color: getColor('btn-bg');
     box-shadow: 0px toRem(2) 0px rgba(0, 0, 0, 0.043);

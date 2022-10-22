@@ -1,6 +1,7 @@
 import ProtectedRoute from "../pages/ProtectedRoute";
 import MainLayout from "../layouts/main/MainLayout";
 import PackageList from "../pages/PackageList";
+import Payment from "../pages/Payment";
 
 const MainRoutes = {
     path: '/',
@@ -13,6 +14,10 @@ const MainRoutes = {
         {
             path: '/package-list',
             element: <PackageList />,
+        },
+        {
+            path: '/payment',
+            element: <Payment />,
         },
     ],
 };
