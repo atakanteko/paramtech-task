@@ -1,0 +1,5 @@
+@mixin fontStyleGenerator($weight, $size, $line-height) {
+    font-weight: $weight;
+    font-size: toRem($size);
+    line-height: toRem($line-height);
+}

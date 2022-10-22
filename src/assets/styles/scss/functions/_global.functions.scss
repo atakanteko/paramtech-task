@@ -1,0 +1,10 @@
+@use "sass:math";
+
+// Pixel to Rem
+@function toRem($value) {
+    @return math.div($value, 16) + rem; 
+}
+
+@function getBreakpoint($name){
+	@return map-get($gridBreakpoints, $name);
+}

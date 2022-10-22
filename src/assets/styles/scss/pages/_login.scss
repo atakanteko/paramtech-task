@@ -1,0 +1,24 @@
+.login-card{
+    background: white;
+    box-shadow: 0px toRem(5) toRem(20) toRem(20) rgba(0, 0, 0, 0.03);
+    border-radius: toRem(12);
+    padding: toRem(64) toRem(52) toRem(38) toRem(52);
+    width: auto;
+    height: auto;
+    .login-form-item{
+        label{
+            display: block;
+            margin-left: toRem(12);
+        }
+        display: flex;
+        @include fontStyleGenerator(400, 16, 24);
+        &:not(:first-child){
+            margin-bottom: toRem(50);
+        }
+        &:first-child{
+            margin-bottom: toRem(54);
+        }
+    }
+    @media screen and (max-width:map-get($gridBreakpoints, lg)){
+    }
+}

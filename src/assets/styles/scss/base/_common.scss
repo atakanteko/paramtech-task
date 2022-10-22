@@ -1,0 +1,19 @@
+.pt-input{
+    width: toRem(446);
+    height: toRem(48);
+    border: toRem(1) solid getColor('border-color');
+    border-radius: toRem(8);
+    @media screen and (max-width:map-get($gridBreakpoints, lg)){
+        width: toRem(240);
+    }
+}
+
+.pt-button{
+    text-align: center;
+    background-color: getColor('btn-bg');
+    box-shadow: 0px toRem(2) 0px rgba(0, 0, 0, 0.043);
+    border-radius: toRem(8);
+    width: 100%;
+    height: toRem(48);
+    @include fontStyleGenerator(400, 14, 22);
+}
