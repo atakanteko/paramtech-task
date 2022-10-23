@@ -1,9 +1,9 @@
 import {  Result, Spin, Divider } from 'antd';
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import PackageContainer from "../components/sections/packageList/PackageContainer";
-import TotalPrice from "../components/sections/packageList/TotalPrice";
-import {getPackageData} from "../features/package/packageSlice";
+import PackageContainer from "../../components/sections/packageList/PackageContainer";
+import TotalPrice from "../../components/sections/packageList/TotalPrice";
+import {getPackageData} from "../../features/package/packageSlice";
 
 
 function PackageList() {

@@ -1,0 +1,32 @@
+.payment-status{
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .info{
+        text-align: center;
+        background: #FFFFFF;
+        box-shadow: 0px toRem(5) toRem(20) toRem(20) rgba(0, 0, 0, 0.03);
+        border-radius: toRem(12);
+        padding: toRem(67) toRem(81);
+        display: flex;
+        flex-direction: column;
+        figure, h1{
+            margin-bottom: toRem(31);
+        }
+    }
+    @media screen and (max-width:map-get($gridBreakpoints, lg)){
+        .info{
+            text-align: center;
+            background: #FFFFFF;
+            box-shadow: 0px toRem(5) toRem(20) toRem(20) rgba(0, 0, 0, 0.03);
+            border-radius: toRem(12);
+            padding: toRem(20) toRem(40);
+            display: flex;
+            flex-direction: column;
+            figure, h1{
+                margin-bottom: toRem(12);
+            }
+        }
+    }
+}

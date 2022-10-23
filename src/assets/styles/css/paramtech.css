@@ -390,12 +390,6 @@ body {
   line-height: 1.375rem;
   margin-bottom: 1.25rem;
 }
-.payment .payment-card .payment-card-container.agreement {
-  overflow: scroll;
-}
-.payment .payment-card .payment-card-container.credentials {
-  overflow: scroll;
-}
 .payment .payment-card .payment-card-container.credentials .cr-input-group {
   display: flex;
   flex-direction: column;
@@ -424,5 +418,38 @@ body {
   }
   .payment .payment-card .payment-card-container.credentials label {
     margin-left: 0rem;
+  }
+}
+
+.payment-status {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.payment-status .info {
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 0px 0.3125rem 1.25rem 1.25rem rgba(0, 0, 0, 0.03);
+  border-radius: 0.75rem;
+  padding: 4.1875rem 5.0625rem;
+  display: flex;
+  flex-direction: column;
+}
+.payment-status .info figure, .payment-status .info h1 {
+  margin-bottom: 1.9375rem;
+}
+@media screen and (max-width: 992px) {
+  .payment-status .info {
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 0.3125rem 1.25rem 1.25rem rgba(0, 0, 0, 0.03);
+    border-radius: 0.75rem;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .payment-status .info figure, .payment-status .info h1 {
+    margin-bottom: 0.75rem;
   }
 }/*# sourceMappingURL=paramtech.css.map */

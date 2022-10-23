@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom";
-import PaymentContainer from "../components/sections/payment/PaymentContainer";
+import PaymentContainer from "../../components/sections/payment/PaymentContainer";
 
 function Payment(){
     const navigate = useNavigate();

@@ -1,7 +1,8 @@
 import ProtectedRoute from "../pages/ProtectedRoute";
 import MainLayout from "../layouts/main/MainLayout";
-import PackageList from "../pages/PackageList";
-import Payment from "../pages/Payment";
+import PackageList from "../pages/packages/PackageList";
+import Payment from "../pages/payment/Payment";
+import PaymentStatus from "../pages/payment/PaymentStatus";
 
 const MainRoutes = {
     path: '/',
@@ -18,6 +19,10 @@ const MainRoutes = {
         {
             path: '/payment',
             element: <Payment />,
+        },
+        {
+            path: '/payment-status',
+            element: <PaymentStatus />,
         },
     ],
 };

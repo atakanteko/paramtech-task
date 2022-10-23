@@ -1,12 +1,22 @@
-import { Col, Skeleton, Spin } from "antd";
+import {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { paymentThunk } from "../../../features/payment/paymentSlice";
+import { Col, Skeleton, Spin } from "antd";
 
 function CompletePayment({packageItems}){
     const dispatch = useDispatch()
+    const navigate = useNavigate();
 
-    const { isValid,debitCardInfo, paymentResp, isLoading } = useSelector((store) => store.payment)
+    const { isValid,debitCardInfo, isLoading, isPaymentSuccessful } = useSelector((store) => store.payment)
     const { selectedPackages, totalPrice,  } = useSelector((store) => store.package)
+
+    useEffect(() =>{
+        if (isPaymentSuccessful){
+            navigate('/payment-status')
+        }
+    }, [isPaymentSuccessful])
+
     const handlePayment = () =>{
         const reqBody = {
             packageIds: [...selectedPackages],
@@ -14,9 +24,9 @@ function CompletePayment({packageItems}){
             totalAmount: totalPrice
         }
         dispatch(paymentThunk(reqBody))
-        console.log(reqBody)
     }
-    console.log(paymentResp)
+
+
     return(
         <Col xs={24} lg={6}>
             <div className="payment-card">
