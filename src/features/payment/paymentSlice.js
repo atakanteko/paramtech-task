@@ -1,7 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// debitCardInfo:{
+//     name: '',
+//         cardNumber: '',
+//         expiration: '',
+//         cvv: '',
+// }
 const initialState = {
-    isValid: false
+    isValid: false,
+    debitCardInfo:{}
 };
 
 const paymentSlice = createSlice({
@@ -13,9 +20,12 @@ const paymentSlice = createSlice({
         },
         unSetValid: (state) =>{
             state.isValid = false;
-        }
+        },
+        setDebitCardInfo: (state, { payload }) =>{
+            state.debitCardInfo = payload
+        },
     },
 });
 
 export default paymentSlice.reducer;
-export const { setValid, unSetValid } = paymentSlice.actions;
+export const { setValid, unSetValid, setDebitCardInfo } = paymentSlice.actions;

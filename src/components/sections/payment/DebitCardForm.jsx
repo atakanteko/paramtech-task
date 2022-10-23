@@ -1,8 +1,8 @@
 import {useState, useEffect} from "react";
 import {Col, Row} from "antd";
-import { transformDate,  transformCvv, transformCardNumber } from "../../../utils/payment";
+import { transformDate, transformCardNumber } from "../../../utils/payment";
 import {useDispatch} from "react-redux";
-import {setValid, unSetValid} from "../../../features/payment/paymentSlice";
+import {setValid, unSetValid, setDebitCardInfo} from "../../../features/payment/paymentSlice";
 
 function DebitCardForm(){
     const dispatch = useDispatch();
@@ -25,6 +25,13 @@ function DebitCardForm(){
             cvv.length === 3
         ) {
             dispatch(setValid())
+            const model = {
+                cardHolderName: cardInfo.name,
+                cardNumber: cardInfo.cardNo,
+                expireDate: `${date.day}/${date.year}`,
+                cvv: cvv,
+            }
+            dispatch(setDebitCardInfo(model))
         } else {
             dispatch(unSetValid())
         }

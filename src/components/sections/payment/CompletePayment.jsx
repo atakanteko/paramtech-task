@@ -2,8 +2,17 @@ import {Col, Skeleton} from "antd";
 import {useSelector} from "react-redux";
 
 function CompletePayment({packageItems}){
-    const { isValid } = useSelector((store) => store.payment)
-    console.log(isValid)
+    const { isValid,debitCardInfo } = useSelector((store) => store.payment)
+    const { selectedPackages, totalPrice,  } = useSelector((store) => store.package)
+    console.log(selectedPackages, totalPrice, debitCardInfo)
+    const handlePayment = () =>{
+        const reqBody = {
+            packageIds: [...selectedPackages],
+            ...debitCardInfo,
+            totalAmount: totalPrice
+        }
+        console.log(reqBody)
+    }
     return(
         <Col xs={24} lg={6}>
             <div className="payment-card">
@@ -22,7 +31,7 @@ function CompletePayment({packageItems}){
                                     )
                                 })
                             }
-                            <div className={`pt-button ${!isValid ? 'disable-btn' : ''}`}>
+                            <div className={`pt-button ${!isValid ? 'disable-btn' : ''}`} onClick={()=>{handlePayment()}}>
                                 <span>Ödeme Yap</span>
                             </div>
                         </div>

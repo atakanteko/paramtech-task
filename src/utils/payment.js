@@ -8,7 +8,3 @@ export function transformCardNumber(number = "") {
         .replace(/(\d{4})/g, "$1 ")
         .trim();
 }
-
-export function transformCvv(cvv = "") {
-    return cvv.replace(/\d/g, "*");
-}
