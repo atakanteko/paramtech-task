@@ -1,18 +1,22 @@
-import {Col, Skeleton} from "antd";
-import {useSelector} from "react-redux";
+import { Col, Skeleton } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { paymentThunk } from "../../../features/payment/paymentSlice";
 
 function CompletePayment({packageItems}){
-    const { isValid,debitCardInfo } = useSelector((store) => store.payment)
+    const dispatch = useDispatch()
+
+    const { isValid,debitCardInfo, paymentResp } = useSelector((store) => store.payment)
     const { selectedPackages, totalPrice,  } = useSelector((store) => store.package)
-    console.log(selectedPackages, totalPrice, debitCardInfo)
     const handlePayment = () =>{
         const reqBody = {
             packageIds: [...selectedPackages],
             ...debitCardInfo,
             totalAmount: totalPrice
         }
+        dispatch(paymentThunk(reqBody))
         console.log(reqBody)
     }
+    console.log(paymentResp)
     return(
         <Col xs={24} lg={6}>
             <div className="payment-card">

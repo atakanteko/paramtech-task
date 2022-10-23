@@ -7,7 +7,6 @@ function LoginForm() {
   const { isLoading } = useSelector((store) => store.user)
   const dispatch = useDispatch()
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
     const user ={
       "fullName": values.username,
       "email": values.email
