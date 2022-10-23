@@ -5,6 +5,7 @@ const initialState = {
     packages: [],
     isLoading: false,
     selectedPackages: [],
+    totalPrice: 0,
 };
 
 export const getPackageData = createAsyncThunk(
@@ -34,7 +35,10 @@ const packageSlice = createSlice({
                     state.selectedPackages.splice(index, 1);
                 }
             }
-        }
+        },
+        setTotal: (state, { payload }) =>{
+            state.totalPrice = payload
+        },
 
     },
     extraReducers:{
@@ -52,4 +56,4 @@ const packageSlice = createSlice({
 });
 
 export default packageSlice.reducer;
-export const { pushSelectedPackages } = packageSlice.actions;
+export const { pushSelectedPackages, setTotal } = packageSlice.actions;

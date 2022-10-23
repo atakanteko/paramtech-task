@@ -42,11 +42,40 @@
             }
             &.credentials{
                 overflow: scroll;
+                .cr-input-group{
+                    display: flex;
+                    flex-direction: column;
+                }
+                .pt-input-credentials{
+                    width: auto;
+                    height: toRem(48);
+                    border: toRem(1) solid getColor('border-color');
+                    border-radius: toRem(8);
+                    padding-left: toRem(12);
+                    &.cvv{
+                        -webkit-text-security: disc;
+                        text-security: disc;
+                    }
+                }
+                label{
+                    margin-left: toRem(12);
+                    margin-bottom: toRem(12);
+                    @include fontStyleGenerator(400, 14, 24)
+                }
             }
         }
 
     }
     @media screen and (max-width:map-get($gridBreakpoints, lg)){
         flex-flow: column-reverse;
+        .payment-card{
+            .payment-card-container{                
+                &.credentials{
+                    label{
+                        margin-left: toRem(0);
+                    }
+                }
+            }
+        }
     }
 }

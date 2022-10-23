@@ -396,8 +396,33 @@ body {
 .payment .payment-card .payment-card-container.credentials {
   overflow: scroll;
 }
+.payment .payment-card .payment-card-container.credentials .cr-input-group {
+  display: flex;
+  flex-direction: column;
+}
+.payment .payment-card .payment-card-container.credentials .pt-input-credentials {
+  width: auto;
+  height: 3rem;
+  border: 0.0625rem solid #E1E1E1;
+  border-radius: 0.5rem;
+  padding-left: 0.75rem;
+}
+.payment .payment-card .payment-card-container.credentials .pt-input-credentials.cvv {
+  -webkit-text-security: disc;
+  text-security: disc;
+}
+.payment .payment-card .payment-card-container.credentials label {
+  margin-left: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
 @media screen and (max-width: 992px) {
   .payment {
     flex-flow: column-reverse;
+  }
+  .payment .payment-card .payment-card-container.credentials label {
+    margin-left: 0rem;
   }
 }/*# sourceMappingURL=paramtech.css.map */

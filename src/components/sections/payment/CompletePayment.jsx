@@ -1,6 +1,9 @@
 import {Col, Skeleton} from "antd";
+import {useSelector} from "react-redux";
 
 function CompletePayment({packageItems}){
+    const { isValid } = useSelector((store) => store.payment)
+    console.log(isValid)
     return(
         <Col xs={24} lg={6}>
             <div className="payment-card">
@@ -19,7 +22,7 @@ function CompletePayment({packageItems}){
                                     )
                                 })
                             }
-                            <div className="pt-button">
+                            <div className={`pt-button ${!isValid ? 'disable-btn' : ''}`}>
                                 <span>Ödeme Yap</span>
                             </div>
                         </div>

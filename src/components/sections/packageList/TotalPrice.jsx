@@ -1,11 +1,14 @@
 import { Col, Row } from "antd";
 import { Link } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState, useMemo } from "react";
+import { setTotal } from "../../../features/package/packageSlice";
 
 let total = 0
 
 function TotalPrice(){
+    const dispatch = useDispatch()
+
     const { selectedPackages, packages } = useSelector((store) => store.package)
     const [totalPrice, setTotalPrice] = useState(0)
 
@@ -18,6 +21,7 @@ function TotalPrice(){
                     if (item.id === x){
                         total += item.amount;
                         setTotalPrice(total)
+                        dispatch(setTotal(total))
                     }
                 })
             })
