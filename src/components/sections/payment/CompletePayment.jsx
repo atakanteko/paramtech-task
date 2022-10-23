@@ -1,11 +1,11 @@
-import { Col, Skeleton } from "antd";
+import { Col, Skeleton, Spin } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { paymentThunk } from "../../../features/payment/paymentSlice";
 
 function CompletePayment({packageItems}){
     const dispatch = useDispatch()
 
-    const { isValid,debitCardInfo, paymentResp } = useSelector((store) => store.payment)
+    const { isValid,debitCardInfo, paymentResp, isLoading } = useSelector((store) => store.payment)
     const { selectedPackages, totalPrice,  } = useSelector((store) => store.package)
     const handlePayment = () =>{
         const reqBody = {
@@ -35,8 +35,10 @@ function CompletePayment({packageItems}){
                                     )
                                 })
                             }
-                            <div className={`pt-button ${!isValid ? 'disable-btn' : ''}`} onClick={()=>{handlePayment()}}>
-                                <span>Ödeme Yap</span>
+                            <div className={`pt-button ${(!isValid || isLoading) ? 'disable-btn' : ''}`} onClick={()=>{handlePayment()}}>
+                                {
+                                    isLoading ? <Spin /> : <span>Ödeme Yap</span>
+                                }
                             </div>
                         </div>
                 }

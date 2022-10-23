@@ -6,6 +6,7 @@ const initialState = {
     debitCardInfo:{},
     isLoading: false,
     paymentResp: '',
+    isPaymentSuccessful: false
 };
 
 export const paymentThunk = createAsyncThunk(
@@ -44,6 +45,7 @@ const paymentSlice = createSlice({
         [paymentThunk.fulfilled]: (state, { payload }) => {
             state.isLoading = false;
             state.paymentResp = payload;
+            state.isPaymentSuccessful = true;
         },
         [paymentThunk.rejected]: (state) => {
             state.isLoading = false;
